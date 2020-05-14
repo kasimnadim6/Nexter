@@ -8,12 +8,21 @@
         grid-template-rows: repeat(6, [row-start] 1fr [row-end]);
         grid-template-columns: repeat(6, [col-start] 1fr [col-end]);
         align-items: center;
+
+        @media only screen and(max-width:$bp-medium) {
+            grid-column: full-start / full-end;
+            padding: 3rem;
+        }
     }
     &__img--1 {
         width: 100%;
         grid-row: row-start 2 / row-end 5;
         grid-column: col-start 2 / col-end 5;
         box-shadow: 0 2rem 5rem rgba($color: #000000, $alpha: 0.1);
+        @media only screen and(max-width:$bp-medium) {
+            grid-column: 1 / 5;
+            grid-row: 1 / -1;
+        }
     }
     &__img--2 {
         width: 115%;
@@ -21,6 +30,10 @@
         grid-column: col-start 4 / col-end 6;
         z-index: 20;
         box-shadow: 0 2rem 5rem rgba($color: #000000, $alpha: 0.2);
+        @media only screen and(max-width:$bp-medium) {
+            grid-row: 1 / -1;
+            width: 100%;
+        }
     }
     &__content {
         background-color: $color-grey-light-1;
@@ -34,6 +47,11 @@
         display: grid;
         align-content: center;
         justify-items: start;
+
+        @media only screen and(max-width:$bp-medium) {
+            grid-row: 5 / 6;
+            grid-column: full-start / full-end;
+        }
     }
     &__text {
         font-size: 1.5rem;
